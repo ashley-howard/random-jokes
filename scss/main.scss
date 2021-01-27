@@ -1,10 +1,12 @@
-@import url("https://fonts.googleapis.com/css?family=Permanent+Marker");
-
 body {
     background: #51bbc9;
-    font-family: "Permanent Marker";
+    font-family: 'Caveat', cursive;
     font-size: 1.5rem;
-    padding: 10px 100px 10px 10px;
+}
+
+::selection {
+    background: #00505a;
+    color: white;
 }
 
 h1 {
@@ -13,10 +15,10 @@ h1 {
     &::before {
         content: "";
         position: absolute;
-        height: 6px;
+        height: 8px;
         width: 100%;
-        background: white;
-        bottom: 4px;
+        background: #94f3ff;
+        bottom: 11px;
         z-index: -1;
     }
 }
@@ -29,6 +31,8 @@ button {
     font-family: inherit;
     font-size: inherit;
     cursor: pointer;
+    font-size: 1.3em;
+    width: 100%;
 }
 
 .hidden {
@@ -38,6 +42,8 @@ button {
 .joke {
     display: flex;
     flex-direction: column;
+    max-width: 900px;
+    margin: auto;
 }
 
 .bubble {
@@ -48,6 +54,7 @@ button {
     border: 3px solid black;
     background: white;
     margin-bottom: 60px;
+    font-size: 1.5em;
 
     &::before {
         content: '';
@@ -59,5 +66,23 @@ button {
         border-radius: 0 0 100%;
         box-shadow: -2px -2px 0 0 #000 inset, -23px 0 0 0 #fff inset,
             -25px -2px 0 0 #000 inset;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    h1 {
+        font-size: 1.3em;
+        text-align: center;
+        padding-bottom: 6px;
+    }
+
+    .bubble,
+    button {
+        font-size: 1em;
+    }
+
+    .joke {
+        align-items: center;
+        width: 100%;
     }
 }
